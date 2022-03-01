@@ -1,19 +1,21 @@
-
+# This method sort's data structures as lists,tuples,dictionary and more..
+# including special data structures which contains more data structures in them
+# this method uses recursion we pass through all the data structures until we get to a primitive variable
 def print_sorted(x):
-    if isinstance(x, dict):
+    if isinstance(x, dict): # first we check the complected case which is a dictionary
         print ('{' ,end=' ')
-        for k,v in sorted(x.items()):
+        for k,v in sorted(x.items()): # sort all the keys
             print(k+' :',end=' ')
             print_sorted(v)
         print('}', end=' ')
     elif isinstance(x, list) or isinstance(x, tuple) or isinstance(x, set):
         print('[' , end=' ')
-        for i in sorted(x,key=lambda x: str(x)):
+        for i in sorted(x,key=lambda x: str(x)): # we cast to string so we can compare between variables and sort
 
             print_sorted(i)
         print(']', end=' ')
     else:
-        print(x,end=' ')
+        print(x,end=' ') # the stop condition
 
     return ''
 ###### some special cases checking#######

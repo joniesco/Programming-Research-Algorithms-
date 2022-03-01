@@ -1,3 +1,6 @@
+#Question from https://www.codingame.com/
+#my answer to the temperature game https://www.codingame.com/training/easy/temperatures
+
 import sys
 import math
 def max(x1,x2):
