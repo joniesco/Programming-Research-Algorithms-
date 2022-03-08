@@ -29,13 +29,10 @@ if __name__ == '__main__':
     print(find_root(lambda x: x ** 5-6*x**2+x-10, 0, 2))  # should print ~2.0
     print(find_root(lambda x: x**2-1, 2, 10))  # should print ~1.0
     print(find_root(lambda x: 0, 2, 10))# should print 0
-    print(find_root(lambda x: x ** 2 - 4, -3, -1))# should print ~-1.0
+    print(find_root(lambda x: x ** 2 - 4, -3, -1))# should print ~-2.0
     print(find_root(lambda x: x ** 2 - 4, -1, 1))# should print ~2.0
-
-
-
-
-
+    print(find_root(lambda x: x ** 2 - 16, 3, 5))  # should print ~4.0
+    print(find_root(lambda x: x ** x - 2, 3, 5))  # should print ~1.55
 
 
     class TestFindRoot(TestCase):
@@ -46,7 +43,8 @@ if __name__ == '__main__':
             self.assertTrue(0 <= find_root(lambda x: x ** 3 , 0, 2) <= 0.2) # should print ~0.1
             self.assertTrue(1.9 <= find_root(lambda x: x ** 5-6*x**2+x-10, 0, 2) <= 2.1)# should print ~2.0
             self.assertTrue(0.99 <= find_root(lambda x: x**2-1, 2, 10) <= 1.1)# should print ~1.0
-            self.assertTrue(2.000 <= find_root(lambda x: x ** 2 - 4, -1, 1) <= 2.1)  # should print ~2.0
+            self.assertTrue(4.000 <= find_root(lambda x: x ** 2 - 16, 3, 5) <= 4.1)  # should print ~4.0
+            self.assertTrue(1.54 <= find_root(lambda x: x ** x - 2, 1, 5) <= 1.56)  # should print ~1.55
 
                 ### cases of 0 ###
             self.assertEqual(find_root(lambda x: 0, 2, 10),0)
@@ -54,6 +52,8 @@ if __name__ == '__main__':
             self.assertEqual(find_root(lambda x: x, 3, 3), 0)
             self.assertEqual(find_root(lambda x: x**8, 3, 3), 0)
 
+
+            self.assertEqual(find_root(lambda x: 2, 2, 10), 0)
 
 
     if __name__ == '__main__':
